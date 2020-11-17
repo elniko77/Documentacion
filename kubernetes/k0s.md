@@ -14,9 +14,11 @@ Bajar la última versión:
      $ sudo mv k0s-v0.7.0-amd64 /usr/local/k0s
     
 Crear el token para unir al worker:
+
      $ k0s token create --role=worker
 
 Correrlo:
+
      $ sudo k0s server
 
 
