@@ -4,3 +4,15 @@
 
 
   * 2- Sidecar Pattern: un contenedor dedicado junto a cada aplicación. 
+
+
+### Configmaps y secrets
+
+    $ kubectl get secrets
+    $ kubectl describe secrets
+    
+    $ kubectl create secret docker-registry mydockerhubsecret --docker-username=myusername --docker-password=mypassword  --docker-email=my.email@provider.com
+
+
+### Downward API's
+
