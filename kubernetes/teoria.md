@@ -16,3 +16,7 @@
 
 ### Downward API's
 
+### Deployment strategies
+
+    * Recreate : delete all pods and then creates new ones.
+    * RollingUpdate: removes old pods one by one (default strategy)
