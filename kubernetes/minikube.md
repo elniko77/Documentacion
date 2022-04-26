@@ -36,6 +36,19 @@ Dashboard:
     $ minikube dashboard --url
     
 
+Usando LoadBalancer en wsl2:
+
+    Para usar loadbalancer, hay que deshabilitar el addon en minikube, instalar el cloud: 
+
+    $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v0.44.0/deploy/static/provider/cloud/deploy.yaml
+
+    y para poder acceder a la ip, hacer el tunel
+    
+    $ minikube tunnel  ingress-nginx-controller
+
+    Con eso podríamos acceder al lb como 127.0.0.1 (localhost)
+
+
 ## Instalación en Windows 11
 
     New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
