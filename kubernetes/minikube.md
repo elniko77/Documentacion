@@ -15,7 +15,22 @@ Comandos básicos:
 Editar la configuración de metallb:
 
     $ microk8s kubectl edit ConfigMap/config -n metallb-system
-    
+
+
+Acceder a un service usando minikube con docker en wsl2 w10/11:
+
+    $ minikube service nginx
+
+    $ minikube service nginx -p multinode-demo   (named cluster)
+
+Multinode:
+
+    $ minikube start --nodes 2 -p multinode-demo
+
+Status named cluster
+
+    $ minikube status -p multinode-demo
+
 Dashboard:
 
     $ minikube dashboard --url
