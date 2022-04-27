@@ -58,3 +58,11 @@ Usando LoadBalancer en wsl2:
 
     $oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
     if ($oldPath.Split(';') -inotcontains 'C:\minikube'){   `[Environment]::SetEnvironmentVariable('Path', $('{0};C:\\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)`}
+
+
+## Ingress en minikube con docker bajo wsl2
+
+    minikube addons enable ingress 
+    minikube tunnel ( publica el ingress controller en 127.0.0.1)
+    * Se puede acceder desde el host
+    
