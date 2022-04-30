@@ -29,4 +29,9 @@ Traefik:
     microk8s.enable traefik
     # Escucha el ingress en el puerto 8080
     
-    
+Escribir la config para poder usar kubectl:
+
+    cd $HOME
+    mkdir .kube
+    cd .kube
+    microk8s config > config
