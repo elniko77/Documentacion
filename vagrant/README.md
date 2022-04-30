@@ -10,4 +10,7 @@
 
     $ vagrant plugin install vagrant-libvirt
 
+* Error "mount.nfs: requested NFS version or transport protocol is not supported"
 
+    Editar /etc/nfs.conf y :
+    udp=y
