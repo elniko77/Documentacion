@@ -23,3 +23,10 @@ Instalar metallb de la sig forma:
           protocol: layer2
           addresses:
           - 192.168.31.103-192.168.31.103
+
+Traefik:
+
+    microk8s.enable traefik
+    # Escucha el ingress en el puerto 8080
+    
+    
