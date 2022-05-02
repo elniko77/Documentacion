@@ -38,7 +38,7 @@ Escribir la config para poder usar kubectl:
 
 ## Configurar el ingress como LoadBalancer (previa correcta config de metallb)
 
-    ```
+```yaml
     apiVersion: v1
     kind: Service
     metadata:
@@ -60,4 +60,4 @@ Escribir la config para poder usar kubectl:
          protocol: TCP
          port: 443
         targetPort: 443
-    ``` 
+``` 
