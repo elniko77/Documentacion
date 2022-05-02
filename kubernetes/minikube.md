@@ -66,28 +66,3 @@ Usando LoadBalancer en wsl2:
     minikube tunnel ( publica el ingress controller en 127.0.0.1)
     * Se puede acceder desde el host
 
-## Configurar el ingress como LoadBalancer (previa correcta config de metallb)
-
-    ```
-    apiVersion: v1
-    kind: Service
-    metadata:
-      name: ingress
-      namespace: ingress
-    spec:
-      selector:
-        name: nginx-ingress-microk8s
-      type: LoadBalancer
-      # loadBalancerIP is optional. MetalLB will automatically allocate an IP from its pool if not
-      # specified. You can also specify one manually.
-      # loadBalancerIP: x.y.z.a
-     ports:
-       - name: http
-         protocol: TCP
-         port: 80
-         targetPort: 80
-       - name: https
-         protocol: TCP
-         port: 443
-        targetPort: 443
-    ``` 
