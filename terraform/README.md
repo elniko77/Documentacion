@@ -7,3 +7,14 @@
     $ sudo apt update && sudo apt install terraform
 
 ```
+
+#### Permiso denegado con libvirtd
+
+
+```bash
+   editar /etc/libvirt/qemu.conf
+   
+   security_driver = "none"
+   
+```
+
