@@ -66,3 +66,7 @@ Usando LoadBalancer en wsl2:
     minikube tunnel ( publica el ingress controller en 127.0.0.1)
     * Se puede acceder desde el host
 
+## Accediendo a un nodeport en wsl2:
+    # Si se hace un service con nodePort=30080 se podrá acceder por  http://localhost:30080/.
+    $ minikube start --ports=127.0.0.1:30080:30080
+
