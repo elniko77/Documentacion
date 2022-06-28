@@ -25,3 +25,6 @@
 ## ArgoCD
 ---
 
+## Seguridad
+
+Popeye, a kubernetes cluster sanitizer [popeye](https://github.com/derailed/popeye)
