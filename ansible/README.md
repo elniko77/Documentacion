@@ -40,3 +40,5 @@ Se referencian como "{{ variable name }}"
 #### Conexión por primera vez, preguntar pass, usar solo 1 host
       
       ansible all  -i 192.168.31.109, -u nss -m ping --ask-pass
+      ansible-playbook -i 192.168.31.109, -u nss --ask-pass main.yaml
+      
