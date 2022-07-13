@@ -15,6 +15,13 @@
     Get-MailboxDatabaseCopyStatus * | sort name | Select name,status,contentindexstate
 
 
+#### Conexión a un pwsh remoto: 
+
+    $cred=Get-Credential
+    $sess = New-PSSession -Credential $cred -ComputerName <remotemachinename>
+    Enter-PSSession $sess
+    Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn;
+
 
 ### Recovery
 
@@ -30,3 +37,19 @@
 #### Montar base:
 
     Mount-Database ‘DB01’
+
+
+#### Problemas de indexado:
+
+``` cpp
+    # Parar los servicios desde powershell
+    [PS] C:\>Stop-Service MSExchangeFastSearch
+    [PS] C:\>Stop-Service HostControllerService
+    
+    # Borrar el directorio de los indices donde está la base, ej: D2D24030-001F-46DA-8176-0A232325A4B6D12.1.Single
+    
+    [PS] C:\>Start-Service MSExchangeFastSearch
+    [PS] C:\>Start-Service HostControllerService
+    
+```
+
