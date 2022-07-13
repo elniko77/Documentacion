@@ -42,3 +42,7 @@ Se referencian como "{{ variable name }}"
       ansible all  -i 192.168.31.109, -u nss -m ping --ask-pass
       ansible-playbook -i 192.168.31.109, -u nss --ask-pass main.yaml
       
+#### Especificar un inventory distinto y un grupo de servers
+
+      ansible-playbook -i /home/nss/ansible-test-inventory -l ubuntu-vm -u nss -K  --ask-pass install-server-packages/install-packages.yml
+      
