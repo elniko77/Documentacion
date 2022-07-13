@@ -11,3 +11,8 @@
 
      ansible all -i 192.168.41.6, -u nss -K -m ping
      ansible all -i 192.168.41.6, -u nss -K -m debug -a "var=hostvars[inventory_hostname]”
+ 
+     # Run the playbook (dry-run)
+     $ ansible-playbook -i IP_ADDRESS, --check --diff playbook.yml
+     # Run the playbook (for real)
+     $ ansible-playbook -i IP_ADDRESS, playbook.yml
