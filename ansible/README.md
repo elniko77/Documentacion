@@ -16,3 +16,24 @@
      $ ansible-playbook -i IP_ADDRESS, --check --diff playbook.yml
      # Run the playbook (for real)
      $ ansible-playbook -i IP_ADDRESS, playbook.yml
+
+#### Variables
+Las variables se pueden incluir inline, con vars: o incluir un archivo con vars_files: . 
+Se referencian como "{{ variable name }}"
+
+```yaml
+   vars:
+       key_file:  /etc/apache2/ssl/mywebsite.key
+       cert_file: /etc/apache2/ssl/mywebsite.cert
+       server_name: www.mywebsite.com
+   vars_files:
+        - apacheconf.yml
+   # Uso     
+   - name: 
+      uri:
+        url: http://{{variable_name}}/index.php
+        status_code: 200      
+   
+
+```
+
