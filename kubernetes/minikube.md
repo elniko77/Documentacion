@@ -70,3 +70,14 @@ Usando LoadBalancer en wsl2:
     # Si se hace un service con nodePort=30080 se podrá acceder por  http://localhost:30080/.
     $ minikube start --ports=127.0.0.1:30080:30080
 
+
+## Creando un cluster multi-nodo:
+
+    minikube start --nodes 2 -p multinode-demo
+    # Ver el estado del cluster
+    minikube status -p multinode-demo
+    # Listado de servicios en multinodo
+    minikube service list -p multinode-demo
+
+
+    
