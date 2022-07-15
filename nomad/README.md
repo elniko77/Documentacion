@@ -19,3 +19,8 @@
     nomad node status
 
     nomad server members
+
+#### Status del cliente
+
+    nomad node status -short -self
+    
