@@ -15,5 +15,9 @@
 
      dig +trace dominio.com.ar
 
+### Viendo el estado de propagación
 
+     https://www.whatsmydns.net/
+     
+     
 
