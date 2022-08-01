@@ -5,6 +5,7 @@
 * AWS recomienda un ttl de 60 segundos cuando se usa failover.
 * Soporta chequeos https, http o tcp.
 * Se puede chequear el contenido que devuelve el endpoint, habilitando “Enable String Matching”
+* Si se habilita el health check, cloudwatch dispara una alarma y usa SNS para enviar la notificación.
 
 
 ### Transfiriendo dominio
