@@ -20,5 +20,10 @@
 
      https://www.whatsmydns.net/
      
-     
+### Listar zonas 
+
+     aws configure
+     aws route53 list-hosted-zones-by-name
+
+
 
