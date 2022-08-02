@@ -6,3 +6,11 @@
     diskpart
     DISKPART> select vdisk file="C:\Users\youruser\WSL\ext4.vhdx”
     DISKPART> compact vdisk
+
+
+#### Desinstalar una distro
+
+    wsl --unregister Debian
+    (hay que borrar el vhdx de C:\Users\nsosa.UCES\AppData\Local\Packages\XXXXX\LocalState)
+    
+ 
