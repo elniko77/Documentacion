@@ -5,6 +5,14 @@ Correrlo en linux con kvm como backend:
 
     $  minikube config set vm-driver kvm2
 
+Hyper-v backend
+
+    $  minikube start --vm-driver=hyperv --hyperv-virtual-switch="Kubernetes Virtual Switch" --cpus=2 --memory=2000m --disk-size=20000mb --nodes=3
+
+Montar directorio en windows:
+
+    $ minikube mount C:/data:/data/user_data
+
 Comandos básicos:
 
 
