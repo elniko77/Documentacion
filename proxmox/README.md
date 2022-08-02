@@ -26,3 +26,8 @@ systemctl start pve-cluster
 ```
 sed -i.backup -z "s/res === null || res === undefined || \!res || res\n\t\t\t.data.status.toLowerCase() \!== 'active'/false/g" /usr/share/javascript/proxmox-widget-toolkit/proxmoxlib.js && systemctl restart pveproxy.service
 ```
+
+#### Cambiar los repos para que actualice la versión community
+     deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
+    
+
