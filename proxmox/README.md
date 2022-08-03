@@ -30,4 +30,8 @@ sed -i.backup -z "s/res === null || res === undefined || \!res || res\n\t\t\t.da
 #### Cambiar los repos para que actualice la versión community
      deb http://download.proxmox.com/debian/pve bullseye pve-no-subscription
     
-
+#### Error al borrar vm -> can't lock file '/var/lock/qemu-server/lock-102.conf' - got timeout
+     rm /var/lock/qemu-server/lock-IDVM.conf 
+     qm stop IDVM
+     qm destroy IDVM
+     
