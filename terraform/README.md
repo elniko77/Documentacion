@@ -18,3 +18,6 @@
    
 ```
 
+#### Debuggeando 
+
+    export TF_LOG=TRACE
