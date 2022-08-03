@@ -34,4 +34,8 @@ sed -i.backup -z "s/res === null || res === undefined || \!res || res\n\t\t\t.da
      rm /var/lock/qemu-server/lock-IDVM.conf 
      qm stop IDVM
      qm destroy IDVM
-     
+
+#### Convertir un template a vm común 
+
+     Editar /etc/pve/qemu-server/$VMID.conf
+     y eliminar la línea "template: 1".
