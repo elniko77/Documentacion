@@ -21,3 +21,7 @@
 #### Debuggeando 
 
     export TF_LOG=TRACE
+    
+#### Sacar el trace
+
+    export TF_LOG=ERROR
