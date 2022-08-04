@@ -25,3 +25,8 @@
 #### Sacar el trace
 
     export TF_LOG=ERROR
+
+#### Autenticación en provider proxmox
+
+    export PM_API_TOKEN_ID="terraform@pve!terraform-token"
+    export PM_API_TOKEN_SECRET="12345abc-a123-4567-b234-1233456789ab"
