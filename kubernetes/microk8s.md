@@ -31,7 +31,22 @@ En las últimas versiones hay que habilitar el repo community
     microk8s.enable community
     microk8s.enable traefik
     # Escucha el ingress en el puerto 8080
+ 
+Traefik instalado desde helm (primero tener configurado metallb):
     
+    microk8s.helm repo add traefik https://helm.traefik.io/traefik
+    microk8s.helm repo update
+    kubectl create namespace traefik
+    microk8s.helm3 install traefik traefik/traefik -n traefik
+ 
+ Acceso al dashboard:
+    Habilitarlo editando el deployment
+    kubectl -n traefik edit deployment traefik
+    
+    Agregar --api.insecure=true
+    
+    kubectl port-forward $(kubectl get pods --selector "app.kubernetes.io/name=traefik" --output=name -n traefik) -n traefik 9000:9000
+ 
 Escribir la config para poder usar kubectl:
 
     cd $HOME
