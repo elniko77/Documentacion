@@ -26,6 +26,9 @@ Instalar metallb de la sig forma:
 
 Traefik:
 
+En las últimas versiones hay que habilitar el repo community
+
+    microk8s.enable community
     microk8s.enable traefik
     # Escucha el ingress en el puerto 8080
     
