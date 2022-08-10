@@ -81,3 +81,61 @@ Escribir la config para poder usar kubectl:
          port: 443
         targetPort: 443
 ``` 
+
+#### Letsencrypt con traefik
+
+Tener configurado traefik (con helm3 en mi caso)
+
+Crear el values.yml
+```yaml
+additionalArguments:
+  - --certificatesresolvers.letsencrypt.acme.tlschallenge=true
+  - --certificatesresolvers.letsencrypt.acme.email=youremail@domain.com
+  - --certificatesresolvers.letsencrypt.acme.storage=/data/letsencrypt.json
+```
+
+Upgrade
+     
+     microk8s.helm3 upgrade traefik traefik/traefik -n traefik --values values.yml
+
+Ver si se aplicó correctamente
+
+     microk8s.helm3 get manifest traefik -n traefik
+
+Ver en los logs si funciona
+
+     kubectl logs $(kubectl get pod -n traefik -o name) -n traefik -f
+
+Crear un ingressroute para traefik
+```yaml
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: whoami-tls
+spec:
+  entryPoints:
+    - websecure
+  routes:
+  - match: Host(`microk8s.ddns.net`) && PathPrefix(`/whoami`)
+    kind: Rule
+    services:
+    - name: whoami
+      port: 80
+  tls:
+    certResolver: letsencrypt
+    
+```
+
+Chequear si se creó el cert correctamente
+
+    kubectl exec -it $(kubectl get pod -n traefik -o name) -n traefik -- cat /data/letsencrypt.json
+
+
+
+
+
+
+
+
+
+
