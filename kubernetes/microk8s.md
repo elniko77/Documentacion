@@ -39,6 +39,8 @@ Traefik instalado desde helm (primero tener configurado metallb):
     kubectl create namespace traefik
     microk8s.helm3 install traefik traefik/traefik -n traefik
  
+    microk8s.helm3 upgrade traefik traefik/traefik -n traefik --values values.yml
+
  Acceso al dashboard:
     Habilitarlo editando el deployment
     kubectl -n traefik edit deployment traefik
