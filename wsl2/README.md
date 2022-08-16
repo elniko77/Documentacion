@@ -11,6 +11,14 @@
 #### Desinstalar una distro
 
     wsl --unregister Debian
-    (hay que borrar el vhdx de C:\Users\nsosa.UCES\AppData\Local\Packages\XXXXX\LocalState)
+    (hay que borrar el vhdx de C:\Users\nss\AppData\Local\Packages\XXXXX\LocalState)
     
- 
+#### Instalar una nueva distro
+
+    Bajar distro para wsl : 
+
+    [https://cloud-images.ubuntu.com/releases/](https://cloud-images.ubuntu.com/releases/)
+
+    `wsl.exe --import <Distribution Name> <Install Folder> <.TAR.GZ File Path>`
+
+     wsl.exe —import ubuntutest C:\Users\nss\Documents\WSL\test-ubuntu C:\Users\nss\Downloads\ubuntu-22.04-server-cloudimg-amd64-wsl.rootfs.tar.gz
