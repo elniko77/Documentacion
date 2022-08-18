@@ -41,7 +41,7 @@
          type: LoadBalancer
  
      # Crear el namespace
-     $ kubectl create namespace wordpress
+     $ kubectl create namespace nswordpress
      
      # Instalar el chart con los valores customizados
      $ helm install wordpress bitnami/wordpress --values=wordpress-values.yaml --namespace nswordpress --version 10.0.3
@@ -50,6 +50,9 @@
      $ export NODE_IP=$(kubectl get nodes --namespace nswordpress -o jsonpath="{.items[0].status.addresses[0].address}")
 echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
     
+     # Obtener la pass
+     $ echo Password: $(kubectl get secret --namespace nswordpress wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d)
+         
      # IR chequeando el status de los resources pertenecientes al wp
      $ watch -x kubectl get all --namespace nswordpress
     
