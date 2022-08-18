@@ -48,7 +48,7 @@
 
      # Obtener la url del wp
      $ export NODE_IP=$(kubectl get nodes --namespace nswordpress -o jsonpath="{.items[0].status.addresses[0].address}")
-echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
+     echo "WordPress URL: http://$NODE_IP:$NODE_PORT/"
     
      # Obtener la pass
      $ echo Password: $(kubectl get secret --namespace nswordpress wordpress -o jsonpath="{.data.wordpress-password}" | base64 -d)
