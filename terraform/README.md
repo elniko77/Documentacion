@@ -8,6 +8,14 @@
 
 ```
 
+#### Instalación de terraformer
+
+```bash
+    curl -LO https://github.com/GoogleCloudPlatform/terraformer/releases/download/0.8.15/terraformer-all-linux-amd64
+    chmod +x terraformer-all-linux-amd64
+    sudo mv terraformer-all-linux-amd64 /usr/local/bin/terraformer
+```
+
 #### Permiso denegado con libvirtd
 
 
