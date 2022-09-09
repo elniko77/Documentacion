@@ -11,6 +11,17 @@
 	--opt o=addr=uxxxxx.your-server.de,username=uxxxxxxx,password=*****,file_mode=0777,dir_mode=0777 \
 	--name cif-volume
 
+#### Backup volumen
+     
+     $ docker run -v /dbdata --name dbstore ubuntu /bin/bash
+     $ docker run --rm --volumes-from dbstore -v $(pwd):/backup ubuntu tar cvf /backup/backup.tar /dbdata
+
+#### Restore volumen
+     
+     $ docker run -v /dbdata --name dbstore2 ubuntu /bin/bash
+     $ docker run --rm --volumes-from dbstore2 -v $(pwd):/backup ubuntu bash -c "cd /dbdata && tar xvf /backup/backup.tar --strip 1"
+
+
 
 #### Montar un volumen en un contenedor
 
