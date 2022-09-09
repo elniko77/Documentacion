@@ -38,3 +38,13 @@
 
     export PM_API_TOKEN_ID="terraform@pve!terraform-token"
     export PM_API_TOKEN_SECRET="12345abc-a123-4567-b234-1233456789ab"
+    
+    
+#### Terraformer
+
+Importar infra:
+    
+    import aws --regions INSERT_AWS_REGIONS_HERE --resources="*" --profile=production
+    
+
+
