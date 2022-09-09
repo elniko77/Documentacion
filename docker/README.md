@@ -2,6 +2,16 @@
 
     docker volume create --driver local --opt type=nfs --opt o=nfsvers=4,addr=192.168.1.100 --opt device=:/nfsdata/testvolume nfs-volume
 
+#### Crear un volumen cifs
+
+    $  docker volume create \
+	--driver local \
+	--opt type=cifs \
+	--opt device=//uxxxxx.your-server.de/backup \
+	--opt o=addr=uxxxxx.your-server.de,username=uxxxxxxx,password=*****,file_mode=0777,dir_mode=0777 \
+	--name cif-volume
+
+
 #### Montar un volumen en un contenedor
 
    docker run -d -it \
