@@ -63,3 +63,18 @@ volumes:
       o: "addr=192.168.1.100,nolock,soft,rw"
       device: ":/nfsdata/testvolume"
 ```
+
+#### Error: "could not find an available, non-overlapping IPv4 address pool among the defaults to assign to the network"
+
+Docker por default crea redes que son /16, por eso hay muy pocas disponibles. Agregar en /etc/docker/daemon.json:
+
+```json
+{
+  "bip": "10.254.1.1/24",
+  "default-address-pools":
+  [
+          {"base":"10.254.0.0/16","size":28}
+  ]
+}
+```
+
