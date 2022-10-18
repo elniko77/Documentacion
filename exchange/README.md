@@ -22,6 +22,11 @@
     Enter-PSSession $sess
     Add-PSSnapin Microsoft.Exchange.Management.PowerShell.SnapIn;
 
+#### Permisos a un usuario para crear/borrar buzones
+    Agregar al usuario a los siguientes grupos:
+    "Recipient Management"
+    "View-Only Organization Management"
+
 
 ### Recovery
 
@@ -37,7 +42,6 @@
 #### Montar base:
 
     Mount-Database ‘DB01’
-
 
 #### Problemas de indexado:
 
