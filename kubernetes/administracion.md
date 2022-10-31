@@ -7,3 +7,8 @@
    kubectl expose pod elnombredetunodo --type "LoadBalancer" --port 8080 --target-port=80
    minikube service elnombredetunodo
 ```
+
+
+#### Ver el rango de ips asignado en metallb
+
+    kubectl describe -n metallb-system  IPAddressPool
