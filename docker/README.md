@@ -78,3 +78,7 @@ Docker por default crea redes que son /16, por eso hay muy pocas disponibles. Ag
 }
 ```
 
+#### Ver logs en tiempo real de todos los contenedores:
+
+    $ watch 'docker ps --format "{{.Names}}" | sort | xargs --verbose --max-args=1 -- docker logs --tail=8 --timestamps'
+
