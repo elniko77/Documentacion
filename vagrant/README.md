@@ -9,6 +9,10 @@
 * Instalar plugin para libvirt 
 
     $ vagrant plugin install vagrant-libvirt
+    
+* Instalar plugin para las vbox guest tools
+
+    $ vagrant plugin install vagrant-vbguest
 
 * Error "mount.nfs: requested NFS version or transport protocol is not supported"
 
