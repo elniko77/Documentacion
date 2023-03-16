@@ -6,6 +6,12 @@
 
     $ docker system df
 
+#### Customizar el formato de salida
+
+    ~/.docker/config.json 
+    {
+	"psFormat": "table {{.ID}}\\t{{.Names}}\\t{{.RunningFor}} ago\\t{{.Status}}\\t{{.Ports}}"
+    }
 
 #### Crear un volumen cifs
 
