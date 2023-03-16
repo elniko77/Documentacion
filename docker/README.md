@@ -2,6 +2,11 @@
 
     docker volume create --driver local --opt type=nfs --opt o=nfsvers=4,addr=192.168.1.100 --opt device=:/nfsdata/testvolume nfs-volume
 
+#### Mostrar información del espacio usado por docker
+
+    $ docker system df
+
+
 #### Crear un volumen cifs
 
     $  docker volume create \
