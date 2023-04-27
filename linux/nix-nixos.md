@@ -32,15 +32,34 @@ Editar /etc/nixos/configuration.nix , en la parte de servicios, agregar:
 #### Update
 Nixos no actualiza automáticamente, para actualizar todo y rebootear:
 
+Chequear los canales
 ```bash
-    $ sudo nixos-rebuild boot — upgrade
+    $ nix-channel --update
 ```
+
+```bash
+    $ sudo nixos-rebuild boot -- upgrade
+```
+
 #### Garbage collection
 Cada vez que se hace un rebuild, en grub se tendrá una lista de las distintas versiones. Con el siguiente comando se borrarán todas las versiones salvo la actual.
 
 ```bash
     $ sudo nix-collect-garbage -d
 ```
+
+#### Configurar garbage collection de forma automática
+
+```bash
+# Automatic Garbage Collection
+# /etc/nixos/configuration.nix
+nix.gc = {
+                automatic = true;
+                dates = "weekly";
+                options = "--delete-older-than 7d";
+        };
+```
+
 
 Borrar versiones mas antiguas que 30 días
 
