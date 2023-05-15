@@ -15,4 +15,7 @@
    $ pulumi new go
     --description "Creates a Ubuntu 20.04 VM via libvirt" \
     --name pulumi-libvirt-ubuntu --stack dev
+   # Bajar el sdk para libvirt
+   $ go get github.com/pulumi/pulumi-libvirt/sdk@v0.2.1
+
 ```
