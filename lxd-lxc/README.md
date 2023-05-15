@@ -6,4 +6,9 @@
    $ lxc list
    $ lxc exec mymachine bash
    $ lxc [stop|start] mymachine
+   
+   $ lxc remote set-default local
+   $ lxc launch images1:rockylinux/9/amd64 rocky9
+   
+   
 ```
