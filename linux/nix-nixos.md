@@ -38,7 +38,7 @@ Chequear los canales
 ```
 
 ```bash
-    $ sudo nixos-rebuild boot -- upgrade
+    $ sudo nixos-rebuild boot --upgrade
 ```
 
 #### Garbage collection
