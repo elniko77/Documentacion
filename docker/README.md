@@ -93,3 +93,19 @@ Docker por default crea redes que son /16, por eso hay muy pocas disponibles. Ag
 
     $ watch 'docker ps --format "{{.Names}}" | sort | xargs --verbose --max-args=1 -- docker logs --tail=8 --timestamps'
 
+#### Hadolint
+    
+    [https://github.com/hadolint/hadolint]
+
+```bash
+docker run --rm -i hadolint/hadolint < Dockerfile
+# OR
+docker run --rm -i ghcr.io/hadolint/hadolint < Dockerfile
+```
+
+Usarlo en gitlab-ci.yml
+```bash
+  lint:hadolint:
+  script: docker run --rm -i hadolint/hadolint < Dockerfile
+  stage: tests
+```
