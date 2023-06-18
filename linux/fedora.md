@@ -93,7 +93,13 @@
    - Agregar el usuario al grupo docker
        sudo usermod -aG docker $USER
    ```
-     
+* Gnome:
+   ```sh
+     # Show weekday in the clock
+     gsettings set org.gnome.desktop.interface clock-show-weekday true
+     # Show battery percentage
+     gsettings set org.gnome.desktop.interface show-battery-percentage true
+   ```
 * Kubernetes: 
 
     - Minikube: Bajar el paquete directamente ya que no está en los repos:
