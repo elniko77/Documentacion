@@ -12,3 +12,9 @@
    
    
 ```
+#### Inteface gráfica
+```bash
+   snap set lxd ui.enable=true
+   snap restart --reload lxd
+   lxc config set core.https_address :8443
+```
