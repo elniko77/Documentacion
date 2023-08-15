@@ -13,6 +13,11 @@
   $ k3d cluster create --api-port 6550 -p "8081:80@loadbalancer" --agents 2
 ```
 
+#### Instalar ingress nginx
+```bash
+  $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.8.1/deploy/static/provider/cloud/deploy.yaml
+```
+
 #### Ingress ejemplo
 
 ```bash
