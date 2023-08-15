@@ -29,7 +29,9 @@
   distrobox stop CONTAINER-NAME
   distrobox rm CONTAINER-NAME
 
-  
+  # Crear con systemd
+  distrobox create -n ubuntu -i ubuntu:22.04 --init --additional-packages "systemd"
+  distrobox create -i fedora:38 -n fed38systemd --init --additional-packages "systemd"
 ```
 
 
