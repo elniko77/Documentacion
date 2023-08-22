@@ -33,7 +33,11 @@
    argocd login  --insecure --username=admin --password=${argocd_password} localhost:8080
 ```
 
-
-
-
+#### Linea de comandos
+```bash
+   # Crear una app
+   argocd app create miapp --repo https://github.com/christianh814/kbe-apps.git --path 00-deploying-application --dest-namespace default --dest-server https://kubernetes.default.svc --directory-recurse
+   # Ver info de una app
+   argocd app get miapp
+```
 
