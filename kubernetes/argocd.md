@@ -8,4 +8,32 @@
 
 ```bash
    wget -c https://github.com/argoproj/argo-cd/releases/download/v2.8.0/argocd-linux-amd64
+   sudo mv argocd-linux-amd64 /usr/local/bin/argocd
 ```
+
+#### Verificar que los pods estén corriendo 
+
+```bash
+   kubectl get pods -n argocd
+```
+
+#### Obtener la pass en una variable de entorno
+```bash
+   export argocd_password=$(kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d)
+```
+
+#### Forwardear el puerto para poder acceder a la web
+```bash
+   kubectl port-forward svc/argocd-server -n argocd 8080:443
+```
+
+#### Loguearse y acceder por cli
+```bash
+   argocd login  --insecure --username=admin --password=${argocd_password} localhost:8080
+   argocd login  --insecure --username=admin --password=${argocd_password} localhost:8080
+```
+
+
+
+
+
