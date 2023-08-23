@@ -9,6 +9,7 @@
 ```bash
    wget -c https://github.com/argoproj/argo-cd/releases/download/v2.8.0/argocd-linux-amd64
    sudo mv argocd-linux-amd64 /usr/local/bin/argocd
+   sudo chmod 755 /usr/local/bin/argocd
 ```
 
 #### Verificar que los pods estén corriendo 
