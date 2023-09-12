@@ -24,6 +24,10 @@
 
      aws configure
      aws route53 list-hosted-zones-by-name
+     aws --profile default route53 list-hosted-zones
+
+
+     
 
 ### Creando un subdominio 
 * Para crear un subdominio, crear una nueva hosted zone, con el nombre del subdominio, por ejemplo subdom.ejemplo.com, copiar los 4 nameservers que da aws, en la zona del dominio (ej: ejemplo.com) crear un registro de tipo NS con esos 4 nameservers como valor.
