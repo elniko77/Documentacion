@@ -109,3 +109,15 @@ Usarlo en gitlab-ci.yml
   script: docker run --rm -i hadolint/hadolint < Dockerfile
   stage: tests
 ```
+
+
+#### Debuggear un contenedor
+```bash
+   # Instalar cntr: https://github.com/Mic92/cntr
+   $ cntr attach containername
+
+```
+
+
+
+
