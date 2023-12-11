@@ -28,9 +28,13 @@
    kubectl port-forward svc/argocd-server -n argocd 8080:443
 ```
 
+#### Apps oficiales de ejemplo 
+```bash
+https://github.com/argoproj/argocd-example-apps/tree/master
+```
+
 #### Loguearse y acceder por cli
 ```bash
-   argocd login  --insecure --username=admin --password=${argocd_password} localhost:8080
    argocd login  --insecure --username=admin --password=${argocd_password} localhost:8080
 ```
 
