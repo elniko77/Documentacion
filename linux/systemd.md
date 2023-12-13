@@ -33,6 +33,9 @@ WantedBy=default.target
 ### Habilitar el timer
 # systemctl disable run-script-with-delay.service
 # systemctl enable run-script-with-delay.timer
+
+# Ver el status del timer
+# systemctl status run-script-with-delay.timer
 ```
 
 
