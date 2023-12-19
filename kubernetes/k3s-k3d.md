@@ -2,7 +2,13 @@
 #### Instalar k3d
 
 ```bash
-   curl -s https://raw.githubusercontent.com/rancher/k3d/main/install.sh | bash
+   curl -sSL https://get.k3s.io | INSTALL_K3S_VERSION="${VERSION_K3S}" sh -s - server --cluster-init --tls-san "$(hostname --fqdn)"
+   mkdir -p "$HOME"/.kube
+   sudo cp /etc/rancher/k3s/k3s.yaml "$HOME"/.kube/config
+   sudo chown "$(id -u)":"$(id -g)" "$HOME"/.kube/config
+   sed -i -e "s/127.0.0.1/$(hostname --fqdn)/g" "$HOME"/.kube/config
+   export KUBECONFIG="$HOME"/.kube/config
+   kubectl cluster-info
 ```
 
 #### Crear cluster
