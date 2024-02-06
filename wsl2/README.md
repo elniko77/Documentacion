@@ -44,7 +44,12 @@
    ubuntu1804.exe config --default-user yourloginname
  ```
 
-
-
-
+#### Modo bridge network
+Modo bridge (solo w11) , poner en .wslconfig ($HOME):
+```bash
+   [wsl2]
+   networkingMode=bridged
+   vmSwitch=mi-switch
+   ipv6=true
+```
 
