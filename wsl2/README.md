@@ -22,3 +22,29 @@
     `wsl.exe --import <Distribution Name> <Install Folder> <.TAR.GZ File Path>`
 
      wsl.exe —import ubuntutest C:\Users\nss\Documents\WSL\test-ubuntu C:\Users\nss\Downloads\ubuntu-22.04-server-cloudimg-amd64-wsl.rootfs.tar.gz
+
+#### Listar las distros instaladas
+
+ ```bash
+   Get-ChildItem HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss\ |
+   ForEach-Object {
+     (Get-ItemProperty $_.PSPATH) | Select-Object DistributionName,BasePath
+   }
+ ```
+
+#### Mover una instalación de wsl2 a otro disco:
+ ```bash
+   wsl --list --verbose
+   mkdir d:\backuplinux
+   wsl --export Ubuntu-18.04 d:\backuplinux\ubuntu.tar
+   wsl --unregister Ubuntu-18.04
+   mkdir d:\wsl
+   wsl --import Ubuntu-18.04 d:\wsl\ d:\backuplinux\ubuntu.tar
+   cd %userprofile%\AppData\Local\Microsoft\WindowsApps            **(this is not needed if in path)**
+   ubuntu1804.exe config --default-user yourloginname
+ ```
+
+
+
+
+
