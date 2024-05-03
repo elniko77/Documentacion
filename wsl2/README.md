@@ -7,6 +7,9 @@
     DISKPART> select vdisk file="C:\Users\youruser\WSL\ext4.vhdx”
     DISKPART> compact vdisk
 
+#### Otra forma de compactar 
+
+    optimize-vhd -Path .\ext4.vhdx -Mode Full
 
 #### Desinstalar una distro
 
