@@ -6,6 +6,7 @@
 ```
 #### Si ya se tiene el repo dotfiles, instalar y usar en una sola línea
 ```bash
+  export GITHUB_USERNAME=elniko77
   sh -c "$(curl -fsLS get.chezmoi.io)" -- init --apply $GITHUB_USERNAME
 ```
 
