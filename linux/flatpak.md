@@ -21,4 +21,7 @@
 
     flatpak uninstall --unused
     
+#### Instalar repo beta 
+
+    flatpak remote-add --if-not-exists flathub-beta https://flathub.org/beta-repo/flathub-beta.flatpakrepo
 
