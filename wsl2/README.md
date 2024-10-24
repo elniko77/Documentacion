@@ -1,3 +1,12 @@
+#### Instalar nixos en wsl2
+
+```cmd
+# Download `nixos-wsl.tar.gz` from the latest release -> https://github.com/nix-community/NixOS-WSL/releases/latest
+# Import the tarball into WSL:
+wsl --import NixOS $env:USERPROFILE\NixOS\ nixos-wsl.tar.gz --version 2
+# You can now run NixOS:
+wsl -d NixOS
+```
 
 #### Compactar un disco wsl2
 
