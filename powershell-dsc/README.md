@@ -1,4 +1,14 @@
-# Powershell dsc 
+#### Instalar starship en powershell
+```powershell
+winget install starship
+
+// configurar en el perfil ($HOME\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1)
+ Invoke-Expression (&starship init powershell)
+
+```
+
+
+#### Powershell dsc 
 
 Powershell dsc (Desired State Configuration) es una plataforma para configurar y hacer management de equipos de forma declarativa. A grandes rasgos sería algo parecido a terraform.
 
