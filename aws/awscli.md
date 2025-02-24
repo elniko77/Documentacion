@@ -24,6 +24,8 @@
     [profile user1]
     region=us-east-1
     output=text
+
+#### prueba
     
 #### Especificar profile
 
