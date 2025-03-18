@@ -16,6 +16,10 @@ wsl -d NixOS
     DISKPART> select vdisk file="C:\Users\youruser\WSL\ext4.vhdx”
     DISKPART> compact vdisk
 
+#### Configuración .wslconfig (en home)
+
+    autoproxy=true  -> Enforces WSL to use Windows’ HTTP proxy information
+
 #### Otra forma de compactar 
 
     optimize-vhd -Path .\ext4.vhdx -Mode Full
