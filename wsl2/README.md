@@ -30,14 +30,18 @@ wsl -d NixOS
     (hay que borrar el vhdx de C:\Users\nss\AppData\Local\Packages\XXXXX\LocalState)
     
 #### Instalar una nueva distro
+    # Buscar las distros disponibles
+    wsl --list --online
 
-    Bajar distro para wsl : 
+    # Instalar
+    wsl —install -d kali-linux
 
-    [https://cloud-images.ubuntu.com/releases/](https://cloud-images.ubuntu.com/releases/)
+    # Correr la distro
+    wsl -d kali-linux
+    
+#### Interface gui en kali (con sonido)
 
-    `wsl.exe --import <Distribution Name> <Install Folder> <.TAR.GZ File Path>`
-
-     wsl.exe —import ubuntutest C:\Users\nss\Documents\WSL\test-ubuntu C:\Users\nss\Downloads\ubuntu-22.04-server-cloudimg-amd64-wsl.rootfs.tar.gz
+    sudo apt install kali-win-kex
 
 #### Listar las distros instaladas
 
